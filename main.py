@@ -24,7 +24,15 @@ print(rank)
 children = book.find('div', class_='zg-grid-general-faceout').div
 children.contents[0]
 
-title = children.contents[1]
+title = children.contents[1].text
+author = children.contents[2].text
+print(author)
+price = children.contents[-1].text
+print(price)
+
+
+
+title = children.contents[1].text
 print(title)
 
 page = requests.get(url, headers=headers)
